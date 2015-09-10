@@ -152,4 +152,9 @@ class Torneo1Controller extends \BaseController {
 	}
 
 
+	//devuleve el torneo vigente
+	public function mostrarPosV()
+	{
+		$posiciones = DB::select(' CALL calculo3(2) ');
+	}
 }

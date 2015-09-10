@@ -76,3 +76,5 @@ Route::get('admin/partido/crearPartido/{fecha}/{torneo}', array('as'=>'hola','us
 Route::get('admin/partido/crearEquipo/{torneo}', array('as'=>'crearEquipo','uses'=>'EquipoController@crearEquipo'));
 
 Route::get('admin/partido/crearFecha/{torneo}', array('as'=>'crearFecha','uses'=>'FechaController@crearFecha'));
+
+Route::get('posicionesV', array('uses' => 'Torneo1Controller@mostrarPosV'));
