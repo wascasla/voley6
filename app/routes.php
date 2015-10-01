@@ -26,10 +26,9 @@ Route::get('reglamento', function()
 	return View::make('reglamento');
 });
 
-Route::get('posicionesMas', function()
-{
-	return View::make('posicionesMasculino');
-});
+Route::get('posicionesMas', array('uses' => 'Torneo1Controller@mostrarPosV'));
+
+Route::get('fixture',array('uses' => 'Torneo1Controller@fixture'));
 
 Route::get('goleadoresMas', function()
 {

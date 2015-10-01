@@ -40,6 +40,8 @@ class EquipoController extends \BaseController {
         $equipo = new Equipo;
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
+
+        
         
         // Revisamos si la data es válido
         if ($equipo->isValid($data))

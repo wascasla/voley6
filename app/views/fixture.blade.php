@@ -2,19 +2,23 @@
 
 
 @section('title') 
-	Posiciones
+	Fixture
 @stop
 
 
 @section('imagen-titulo') 
-{{ HTML::image('assets/media/titulos/img_tit_posiciones.jpg', 'Torneo',array('class' => 'img-responsive','width' => '178', 'height' => '75') )}}
+{{ HTML::image('assets/media/titulos/img_tit_fixture.jpg', 'Torneo',array('class' => 'img-responsive','width' => '178', 'height' => '75') )}}
 @stop
 
 @section('content') 
 
     
 
-    <h1>{{$torneo->nombreTorneo}}</h1>
+    <h1>Fechas</h1>
+
+    @foreach ($equipos as $equipo)
+
+    @endforeach
 
     <table  class="table table-bordered letraBlanca">
         
@@ -47,5 +51,7 @@
             @endforeach
         </tbody>
     </table>
-                              
+        <BR>
+        <BR>
+        <BR>                      
 @stop

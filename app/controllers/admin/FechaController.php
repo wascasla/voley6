@@ -41,6 +41,8 @@ class FechaController extends \BaseController {
         $fecha = new Fecha;
         // Obtenemos la data enviada por el usuario
         $data = Input::all();
+
+        
         
         // Revisamos si la data es válido
         if ($fecha->isValid($data))

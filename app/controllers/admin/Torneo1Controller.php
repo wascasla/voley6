@@ -155,6 +155,32 @@ class Torneo1Controller extends \BaseController {
 	//devuleve el torneo vigente
 	public function mostrarPosV()
 	{
-		$posiciones = DB::select(' CALL calculo3(2) ');
+		$numero_torneo = 2;
+		$equipos = DB::table('equipo')->where('torneo_id','=', $numero_torneo)
+		->orderBy('puntos', 'DESC')
+    	->orderBy('pg', 'DESC')    
+		->get();
+		$torneo = Torneo::find($numero_torneo);
+		$var = 1;
+		//$posiciones = DB::select(' CALL calculo3(?) ', array($numero_torneo));
+		//return View::make('posicionesMasculino')->with('posiciones', $posiciones); 
+		//return $equipos;
+		return View::make('posicionesMasculino',array('equipos'=> $equipos,'torneo' => $torneo,'var'=>$var));
+	}
+
+	public function fixture(){
+		$numero_torneo = 2;
+		$fixture = DB::table('fecha')
+		            ->join('partido', 'fecha.id', '=', 'partido.fecha_id')
+		            //->join('orders', 'users.id', '=', 'orders.user_id')
+		            
+		            ->select('fecha.nombre', 'partido.fechaPartido', 'partido.equipoLocal'
+		            	, 'partido.equipoVisitante', 'partido.golEquipoLocal', 'partido.golEquipoVisitante'
+		            	)
+		            ->where('fecha.torneo_id','=', $numero_torneo)
+		            ->orderBy('fecha.id', 'ASC') 
+		            ->get();
+
+		return View::make('fixture',array('fixture'=> $fixture));
 	}
 }

@@ -67,12 +67,16 @@ class Partido1Controller extends \BaseController {
         $equipos = Equipo::where('torneo_id','=',$this->id_torneo)
 			->select('nombreEquipo','id')
 			->get();
+
+
         
         // Revisamos si la data es válido
         if ($partido->isValid($data))
         {
             // Si la data es valida se la asignamos al usuario
             $partido->fill($data);
+
+            
             // Guardamos el usuario
             $partido->save();
             // Y Devolvemos una redirección a la acción show para mostrar el usuario
@@ -207,6 +211,5 @@ class Partido1Controller extends \BaseController {
 	}
 
 
-
-
+	
 }

@@ -42,7 +42,7 @@
                                     <a href="{{URL::to('torneo')}}">TORNEO</a>
                                 </li>
                                 <li>
-                                    <a href="fixture.html">FIXTURE</a>
+                                    <a href="{{URL::to('fixture')}}">FIXTURE</a>
                                 </li>
                                 <li>
                                     <a href="{{URL::to('posicionesMas')}}">POSICIONES</a>
